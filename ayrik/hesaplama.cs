@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-
 using System.Text;
 
 
@@ -10,13 +9,14 @@ namespace ayrik
     {
         /*önce tüketici sonra üretici depolanıyor */
         public String[] Ad;
+        //uretim tuketim durumunu göstermek için bir enum;
         private enum U_TDurumu { uretim, tuketim, hepsi ,hicBiri};
-        U_TDurumu bitenfaktor=U_TDurumu.hicBiri;
         //[i;indis, değer,uretim/tuketim]
         public int[,] Matris;
         public int DiziUzunlugu;
         public int[,] hesaplamaMatrisi;
         public int[,] SonucMatrisi;
+        public String durumMesaji="";
         public int uretici;
         public int tuketici;
         public int toplama=0;
@@ -33,14 +33,18 @@ namespace ayrik
                 durum = bittiMi();
                 if (durum == U_TDurumu.hicBiri)
                 {
+                    durumMesaji = "Üretimle tüketim eşit sayıda olup tüm malzeme dağıtılmıştır";
                     break;
                 }
                 else if (durum == U_TDurumu.tuketim)
                 {
+                    durumMesaji = "Yeterli sayıda üretim yok.";
                     break;
                 }
+                
                 else if (durum == U_TDurumu.uretim)
                 {
+                    durumMesaji = "İhtiyaç fazlası üretim yapılıyor.";
                     break;
                 }
                 else if (durum == U_TDurumu.hepsi)
@@ -64,7 +68,6 @@ namespace ayrik
                         Matris[tuketici + J, 1] = 0;
                         hesaplamaMatrisi[I, uretici] = 0;
                         hesaplamaMatrisi[tuketici, J] = 0;
-
                     }
                     //  tuketim uretimden büyükse
                     else

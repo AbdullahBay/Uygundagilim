@@ -83,6 +83,13 @@ namespace ayrik
             btnKapat.Top = 40 + (satir + 1) * topArtis;
             Controls.Add(btnKapat);
             btnKapat.Click += btnOnay_Click;
+
+            //Sözel durum bilgisi gösteriliyor
+            Label lblSozelDurum = new Label();
+            lblSozelDurum.Text = hesaplama.durumMesaji;
+            lblSozelDurum.Left = 120 ;
+            lblSozelDurum.Top = 40 + (satir + 2) * topArtis;
+            
             this.SuspendLayout();
         }
        

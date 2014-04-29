@@ -91,6 +91,7 @@
             // 
             this.lblCarpan2.AutoSize = true;
             this.lblCarpan2.Enabled = false;
+            this.lblCarpan2.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblCarpan2.Location = new System.Drawing.Point(326, 61);
             this.lblCarpan2.Name = "lblCarpan2";
             this.lblCarpan2.Size = new System.Drawing.Size(119, 13);

@@ -81,22 +81,17 @@ namespace ayrik
                         // Matris[I, uretici] = 0;
                     }
                 }
-                for (int i = 0; i < tuketici; i++)
-                {
-                    for (int j = 0; j < uretici; j++)
-                    {
-                        SonucMatrisi[i, uretici] += SonucMatrisi[i, j] * hesaplamaMatrisi[i, j];
-                    }
-
-                }
-                
-            }
+            }            
             toplam();
         }
         private void toplam()
         {
             for (int i = 0; i < tuketici; i++)
             {
+                for (int j = 0; j < uretici; j++)
+                {
+                    SonucMatrisi[i, uretici] += SonucMatrisi[i, j] * hesaplamaMatrisi[i, j];
+                }
                 toplama += SonucMatrisi[i, uretici];
             }
         }

@@ -68,7 +68,6 @@ namespace ayrik
 
                 }
             }
-            
 
             Label lblToplam = new Label();
             lblToplam.Text = hesaplama.toplama.ToString();
@@ -87,9 +86,12 @@ namespace ayrik
             //Sözel durum bilgisi gösteriliyor
             Label lblSozelDurum = new Label();
             lblSozelDurum.Text = hesaplama.durumMesaji;
-            lblSozelDurum.Left = 120 ;
+            lblSozelDurum.Left = 40 ;
             lblSozelDurum.Top = 40 + (satir + 2) * topArtis;
-            
+            lblSozelDurum.AutoSize = true;
+            lblSozelDurum.ForeColor = System.Drawing.SystemColors.HotTrack;
+            Controls.Add(lblSozelDurum);
+
             this.SuspendLayout();
         }
        
